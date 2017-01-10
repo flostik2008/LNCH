@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87BB0EEA1E23401000107F5C /* MealsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0EE91E23401000107F5C /* MealsVC.swift */; };
 		87F393671E23259F008BD69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F393661E23259F008BD69A /* AppDelegate.swift */; };
-		87F393691E23259F008BD69A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F393681E23259F008BD69A /* ViewController.swift */; };
 		87F3936C1E23259F008BD69A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F3936A1E23259F008BD69A /* Main.storyboard */; };
 		87F3936F1E23259F008BD69A /* LNCH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87F3936D1E23259F008BD69A /* LNCH.xcdatamodeld */; };
 		87F393711E2325A0008BD69A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F393701E2325A0008BD69A /* Assets.xcassets */; };
@@ -16,9 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87BB0EE91E23401000107F5C /* MealsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsVC.swift; sourceTree = "<group>"; };
 		87F393631E23259F008BD69A /* LNCH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LNCH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F393661E23259F008BD69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87F393681E23259F008BD69A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87F3936B1E23259F008BD69A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87F3936E1E23259F008BD69A /* LNCH.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LNCH.xcdatamodel; sourceTree = "<group>"; };
 		87F393701E2325A0008BD69A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				87F393661E23259F008BD69A /* AppDelegate.swift */,
-				87F393681E23259F008BD69A /* ViewController.swift */,
+				87BB0EE91E23401000107F5C /* MealsVC.swift */,
 				87F3936A1E23259F008BD69A /* Main.storyboard */,
 				87F393701E2325A0008BD69A /* Assets.xcassets */,
 				87F393721E2325A0008BD69A /* LaunchScreen.storyboard */,
@@ -140,9 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87F393691E23259F008BD69A /* ViewController.swift in Sources */,
 				87F393671E23259F008BD69A /* AppDelegate.swift in Sources */,
 				87F3936F1E23259F008BD69A /* LNCH.xcdatamodeld in Sources */,
+				87BB0EEA1E23401000107F5C /* MealsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +283,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evgenyvlasov.LNCH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -306,6 +307,7 @@
 				87F3937A1E2325A0008BD69A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
