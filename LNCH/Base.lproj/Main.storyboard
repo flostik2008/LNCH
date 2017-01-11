@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,14 +18,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tsw-AX-OP1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbI-7J-n8b">
-                                        <rect key="frame" x="132" y="28" width="111" height="36"/>
+                                        <rect key="frame" x="105" y="28" width="111" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="111" id="3eW-Hp-80t"/>
                                             <constraint firstAttribute="height" constant="36" id="by8-sS-MFo"/>
@@ -52,9 +52,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McQ-KH-owv">
-                                <rect key="frame" x="0.0" y="72" width="375" height="37"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="37"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRh-1l-8Id">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRh-1l-8Id">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7z-s8-dVl">
@@ -169,7 +169,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A22-5J-WJx">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZBs-LV-mXr">
                                     <size key="itemSize" width="177" height="169"/>
@@ -179,56 +179,48 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dUi-DC-feu">
-                                        <rect key="frame" x="0.0" y="1" width="182" height="182"/>
+                                        <rect key="frame" x="80" y="0.0" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chicken-potato-rs-1873148-x" translatesAutoresizingMaskIntoConstraints="NO" id="GVt-mN-Nyy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="182"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chicken with sweet potato" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz1-Xs-6OP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chicken with sweet potato" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz1-Xs-6OP">
                                                     <rect key="frame" x="13" y="7" width="156" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="Nz1-Xs-6OP" firstAttribute="leading" secondItem="dUi-DC-feu" secondAttribute="leading" constant="13" id="9PI-VB-I7y"/>
-                                            <constraint firstItem="Nz1-Xs-6OP" firstAttribute="top" secondItem="dUi-DC-feu" secondAttribute="top" constant="7" id="LVR-9u-y5T"/>
-                                        </constraints>
-                                        <size key="customSize" width="182" height="182"/>
+                                        <size key="customSize" width="160" height="160"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="shb-vW-LJI">
-                                        <rect key="frame" x="192" y="0.0" width="183" height="183"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="shb-vW-LJI">
+                                        <rect key="frame" x="80" y="170" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add meal cell" translatesAutoresizingMaskIntoConstraints="NO" id="uFh-BJ-FFD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add meal cell" translatesAutoresizingMaskIntoConstraints="NO" id="uFh-BJ-FFD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="183"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ek-ix-Z2d">
-                                                    <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ek-ix-Z2d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="addNewMeal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4X-2w-GNX"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="9Ek-ix-Z2d" firstAttribute="leading" secondItem="shb-vW-LJI" secondAttribute="leading" id="8Fy-dM-IDg"/>
-                                            <constraint firstAttribute="bottom" secondItem="uFh-BJ-FFD" secondAttribute="bottom" id="9Ap-G4-5iy"/>
-                                            <constraint firstItem="uFh-BJ-FFD" firstAttribute="leading" secondItem="shb-vW-LJI" secondAttribute="leading" id="Ay6-Qn-w9c"/>
-                                            <constraint firstItem="uFh-BJ-FFD" firstAttribute="top" secondItem="shb-vW-LJI" secondAttribute="top" id="BIw-Dr-4Lq"/>
-                                            <constraint firstAttribute="trailing" secondItem="uFh-BJ-FFD" secondAttribute="trailing" id="Q1d-dP-t52"/>
-                                            <constraint firstItem="9Ek-ix-Z2d" firstAttribute="top" secondItem="shb-vW-LJI" secondAttribute="top" id="SQv-tv-yVz"/>
-                                            <constraint firstAttribute="bottom" secondItem="9Ek-ix-Z2d" secondAttribute="bottom" id="f2Y-2H-qM1"/>
-                                            <constraint firstAttribute="trailing" secondItem="9Ek-ix-Z2d" secondAttribute="trailing" id="fXz-2E-iWO"/>
-                                        </constraints>
-                                        <size key="customSize" width="183" height="183"/>
+                                        <size key="customSize" width="160" height="160"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -248,6 +240,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="A22-5J-WJx" id="Sjs-2J-gme"/>
                         <outlet property="scrollView" destination="SRh-1l-8Id" id="Fud-CQ-iLH"/>
                     </connections>
                 </viewController>
