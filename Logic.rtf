@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fswiss\fcharset0 ArialMT;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red27\green29\blue31;\red255\green247\blue212;\red235\green236\blue237;
+}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 \expnd0\expndtw0\kerning0
+\
+1. \
+Scroll View menu - set a view, inserted scroll View. Added buttons. Specified contentSize in viewDidLoad \
+\
+Issue: not dynamic - will be a problem on bigger screens\
+\
+2. \
+CollectionView. \
+Created UICollectionViewFlowLayout. removed minimumInterimSpacing and minimumLineSpacing.\
+\
+3. \
+CoreData. \
+First created entity and its atributes in .xcdatamodeld. Then, in attr insp set its Module : Current Product Module, Codegen : Manual / None. Then Editor-> Create NSManagedObject subclass. \
+\
+4. \
+Creating var FetchedResultsController in the main MealsVC \
+New func attemptFetch( )\
+Creating NSFetchRequest. (optionally, setting sorting option)\
+To create FetchedResultsController, we need NSManagedObjectContext that is buried in AppDelegate. \
+In AppDelegate, we create a var of NSManagedObjectContext so we can easily access it. \
+Created a controller. \
+Assigned class controller, to method controller. \
+Performed the fetch. \
+Call for attemptFetch( ) in viewDidLoad( ) \
+\
+5. \
+We need to implement "controllerWillChangeContent" and "controllerDidChangeContent" where we suppose to update our collectionView. But collectionView doesn't have beginUpdates/endUpdates methods. \
+There is "performBatchUpdates" with a completion block. Don't know how to use it. \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs30 \cf2 \cb3 The trick is to queue the updates made through the 
+\f2\fs26 \cb4 NSFetchedResultsControllerDelegate
+\f1\fs30 \cb3  until the controller 
+\i finishes
+\i0  its updates. 
+\f0\fs36 \cf0 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Solution: Creating an array of BlockOperations. In 'controllerWillChangeContent' - 'removeAll( )'.\
+In 'controllerDidChangeContent' - performBatchUpdates with a closure and a completionBlock. \
+New func "didChangeAnObject" that will listen if we change object somehow (insert, delete, move, update)\
+\
+6. \
+For 'numberOfSections' and 'numberOfItemsInSection' we have to count objects inside of our NSFetchedResultsController 'controller'\
+\
+7. \
+Have to configure the cell in 'cellForItemAt'. \
+For that, new func configureCell(cell:   indexPath:   ). Call for it in "cellForItemAt". \
+But we shouldn't configure cells in a VC, therefore, we create a UICollectionViewCell class. Hook it with our storyboard. IBOutlets. \
+\
+8. \
+In cell class, new main func configureCell(meal: ), simply take attributes of the passed arg meal. \
+In mealVC, in configureCell we grab current object using controller and indexPath. Then pass it as arg to configureCell. \
+Also, update our cell when it is updated with method 'didChangeAnObject' in case '.update'\
+\
+Issue: size of collectionViewCell is not dynamic. \
+\
+9. \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+ }
