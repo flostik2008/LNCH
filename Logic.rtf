@@ -64,8 +64,19 @@ Also, update our cell when it is updated with method 'didChangeAnObject' in case
 Issue: size of collectionViewCell is not dynamic. \
 \
 9. \
+Couldn't put "add" button at the end of CollectionView. Keep having an error: 
+\f1\fs30 \cf2 no object at index 3 in section at index 0
+\f0\fs36 \cf0 . \
+I suspect it has to do with 
+\f1\fs30 \cf2 bounds of 
+\f2\fs26 \cb4 NSFetchedResultsController
+\f0\fs36 \cf0 \cb1 . So there should be a bounds check. \
+But there is nothing about it on StackOverflow. Doubt it. \
+Switching to creating a + button.\
+After 2nd attempt, connect the + btn. \
+ \
 \
-\
+ \
 \
 \
 \

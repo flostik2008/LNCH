@@ -12,7 +12,7 @@ import CoreData
 
 class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
 
-    let widthForScrollMenu: CGFloat = 420
+    let widthForScrollMenu: CGFloat = 470
     let cellWidth: CGFloat = 160
     let cellHeight: CGFloat = 160
     
@@ -41,15 +41,56 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         flow.minimumLineSpacing = 0
         collectionView.collectionViewLayout = flow
         
+        generateData()
         attemptFetch()
         
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // get the value of indexPath.item. Should be total - 1.
+        
+        let numberOfItems = collectionView.numberOfItems(inSection: 0)
+        
+        if indexPath.item <= numberOfItems - 1 {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionCell
         configureCell(cell: cell, indexPath: indexPath)
         
-        return cell
+        /* Adding "Add" button at the end of CollectionView
+         
+        var numberOfItems = self.collectionView(self.collectionView, numberOfItemsInSection: 0)
+
+        if (indexPath.row == numberOfItems - 1) {
+            
+            /* Cheking the bounds of NSFetchedResultsController
+             
+            id  result  = nil;
+            if ([[self.fetchedResultsController sections] count] > [indexPath section]){
+             
+                id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:[indexPath section]];
+                if ([sectionInfo numberOfObjects] > [indexPath row]){
+                    result = [self.fetchedResultsController objectAtIndexPath:indexPath];
+                }
+            }
+            */
+            
+            var addCellButton = UIButton(frame: cell.frame)
+            addCellButton.setTitle("Add", for: UIControlState.normal)
+            cell.addSubview(addCellButton)
+        } */
+        
+            return cell
+        
+        } else  {
+            let cellBtn = collectionView.dequeueReusableCell(withReuseIdentifier: "AddNewMeal", for: indexPath) as UICollectionViewCell
+            
+            var addCellBtn = UIButton(frame: cellBtn.frame)
+            addCellBtn.setTitle("Add", for: .normal)
+            cellBtn.addSubview(addCellBtn)
+            return cellBtn
+        }
+        
     }
     
     func configureCell (cell: CollectionCell, indexPath: IndexPath) {
@@ -58,19 +99,13 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         cell.configureCell(meal: meal)
     
     }
-    
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if let sections = controller.sections {
-        
             let sectionInfo = sections[section]
-            return sectionInfo.numberOfObjects
+            return sectionInfo.numberOfObjects + 1
+     //     return sectionInfo.numberOfObjects
         }
         return 0
     }
@@ -80,6 +115,17 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             return sections.count
         }
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        var numberOfItems = self.collectionView(self.collectionView, numberOfItemsInSection: 0)
+        
+        if (indexPath.row == numberOfItems - 1) {
+            
+            UIAlertView(title: "you did it!", message: "Add button was pressed :)", delegate: nil, cancelButtonTitle: "Great!").show()
+            
+        
+        }
     }
     
     @IBAction func allMealsBtn(_ sender: Any) {
@@ -96,11 +142,10 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     @IBAction func snackBtn(_ sender: Any) {
     }
     
-    @IBAction func addNewMeal(_ sender: Any) {
-        
-        // creation of the new meal. 
+    @IBAction func addMealBtn(_ sender: Any) {
         
     }
+    
     
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Meal> = Meal.fetchRequest()
@@ -108,10 +153,7 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         fetchRequest.sortDescriptors = [dateSort]
         
         
-        /*  NSSortDescriptor (or something else) to sort out data based on "category" value
-         let dateSort = NSSortDescriptor(key: "created", ascending: false)
-         fetchRequest.sortDescriptors = [dateSort]
-         
+        /*
          let predicate = NSPredicate(format: "%K == %@", "last", "Doe")
          fetchRequest.predicate = predicate
          
@@ -181,6 +223,29 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             break
         }
     }
+    
+    func generateData() {
+        let meal = Meal(context: context)
+        meal.category = "Breakfast"
+        meal.directions = "Flip dat shit"
+        meal.ingridients = "Chicken, potato, greens, pees"
+        meal.title = "Chicken/ s potato"
+        
+        let meal2 = Meal(context: context)
+        meal2.category = "Lunch"
+        meal2.directions = "Flip dat shit"
+        meal2.ingridients = "Chicken, potato, greens, pees"
+        meal2.title = "Salmon/ rice"
+        
+        let meal3 = Meal(context: context)
+        meal3.category = "Dinner"
+        meal3.directions = "Flip dat shit"
+        meal3.ingridients = "Chicken, potato, greens, pees"
+        meal3.title = "Cod Fish with bruccel sprouts"
+    
+    }
+    
+    
     
 }
 

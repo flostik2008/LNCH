@@ -34,19 +34,30 @@
                                         <color key="textColor" red="0.28235294117647058" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="list icon1" translatesAutoresizingMaskIntoConstraints="NO" id="aGm-HF-zPU">
-                                        <rect key="frame" x="324" y="18" width="36" height="36"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list icon1" translatesAutoresizingMaskIntoConstraints="NO" id="aGm-HF-zPU">
+                                        <rect key="frame" x="274" y="28" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="7RY-sb-saX"/>
                                             <constraint firstAttribute="height" constant="36" id="w8r-w3-yJJ"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Add Meal Btn" translatesAutoresizingMaskIntoConstraints="NO" id="oAw-9D-KM7">
+                                        <rect key="frame" x="8" y="28" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="9Ig-Pm-3Lp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="AXF-b8-Pfh"/>
+                                            <constraint firstAttribute="height" constant="36" id="t8T-HF-WhO"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="uP1-Db-hYr"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="aGm-HF-zPU" secondAttribute="trailing" constant="15" id="14x-L4-vDw"/>
+                                    <constraint firstAttribute="trailing" secondItem="aGm-HF-zPU" secondAttribute="trailing" constant="10" id="14x-L4-vDw"/>
                                     <constraint firstAttribute="bottom" secondItem="KbI-7J-n8b" secondAttribute="bottom" constant="8" id="1d8-PW-r9U"/>
+                                    <constraint firstItem="oAw-9D-KM7" firstAttribute="leading" secondItem="Tsw-AX-OP1" secondAttribute="leading" constant="11" id="70h-VP-m1Q"/>
                                     <constraint firstItem="KbI-7J-n8b" firstAttribute="centerX" secondItem="Tsw-AX-OP1" secondAttribute="centerX" id="gcF-ZF-pUM"/>
+                                    <constraint firstAttribute="bottom" secondItem="oAw-9D-KM7" secondAttribute="bottom" constant="9" id="hKd-6A-fDb"/>
                                     <constraint firstAttribute="height" constant="72" id="kUk-d5-OIs"/>
                                     <constraint firstAttribute="bottom" secondItem="aGm-HF-zPU" secondAttribute="bottom" constant="8" id="z4Q-NX-jYR"/>
                                 </constraints>
@@ -54,7 +65,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McQ-KH-owv">
                                 <rect key="frame" x="0.0" y="72" width="320" height="37"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRh-1l-8Id">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRh-1l-8Id">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7z-s8-dVl">
@@ -163,7 +174,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="17M-mO-WOU"/>
                                     <constraint firstItem="SRh-1l-8Id" firstAttribute="top" secondItem="McQ-KH-owv" secondAttribute="top" id="8Tz-Dc-pV2"/>
-                                    <constraint firstAttribute="trailing" secondItem="SRh-1l-8Id" secondAttribute="trailing" id="9uD-7E-VgV"/>
+                                    <constraint firstAttribute="trailing" secondItem="SRh-1l-8Id" secondAttribute="trailing" constant="-55" id="9uD-7E-VgV"/>
                                     <constraint firstAttribute="bottom" secondItem="SRh-1l-8Id" secondAttribute="bottom" id="brc-aI-VKI"/>
                                     <constraint firstItem="SRh-1l-8Id" firstAttribute="leading" secondItem="McQ-KH-owv" secondAttribute="leading" id="jHh-0g-OCa"/>
                                 </constraints>
@@ -204,27 +215,23 @@
                                             <outlet property="mealTitleLbl" destination="Nz1-Xs-6OP" id="jPt-aF-vhD"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="shb-vW-LJI">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddNewMeal" id="KeF-BN-rfk" customClass="CollectionCell" customModule="LNCH" customModuleProvider="target">
                                         <rect key="frame" x="80" y="170" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add meal cell" translatesAutoresizingMaskIntoConstraints="NO" id="uFh-BJ-FFD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="183"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ek-ix-Z2d">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add meal cell" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-fJ-EmC">
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <connections>
-                                                        <action selector="addNewMeal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j4X-2w-GNX"/>
-                                                    </connections>
-                                                </button>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="160" height="160"/>
+                                        <connections>
+                                            <outlet property="mealImg" destination="r7P-fJ-EmC" id="fMU-Kb-7ba"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -254,6 +261,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add Meal Btn" width="72" height="70"/>
         <image name="add meal cell" width="366" height="366"/>
         <image name="chicken-potato-rs-1873148-x" width="300" height="300"/>
         <image name="list icon1" width="70" height="70"/>
