@@ -48,64 +48,22 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // get the value of indexPath.item. Should be total - 1.
-        
-        let numberOfItems = collectionView.numberOfItems(inSection: 0)
-        
-        if indexPath.item <= numberOfItems - 1 {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionCell
-        configureCell(cell: cell, indexPath: indexPath)
-        
-        /* Adding "Add" button at the end of CollectionView
-         
-        var numberOfItems = self.collectionView(self.collectionView, numberOfItemsInSection: 0)
-
-        if (indexPath.row == numberOfItems - 1) {
-            
-            /* Cheking the bounds of NSFetchedResultsController
-             
-            id  result  = nil;
-            if ([[self.fetchedResultsController sections] count] > [indexPath section]){
-             
-                id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:[indexPath section]];
-                if ([sectionInfo numberOfObjects] > [indexPath row]){
-                    result = [self.fetchedResultsController objectAtIndexPath:indexPath];
-                }
-            }
-            */
-            
-            var addCellButton = UIButton(frame: cell.frame)
-            addCellButton.setTitle("Add", for: UIControlState.normal)
-            cell.addSubview(addCellButton)
-        } */
-        
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionCell
+            configureCell(cell: cell, indexPath: indexPath)
             return cell
-        
-        } else  {
-            let cellBtn = collectionView.dequeueReusableCell(withReuseIdentifier: "AddNewMeal", for: indexPath) as UICollectionViewCell
-            
-            var addCellBtn = UIButton(frame: cellBtn.frame)
-            addCellBtn.setTitle("Add", for: .normal)
-            cellBtn.addSubview(addCellBtn)
-            return cellBtn
-        }
-        
     }
     
     func configureCell (cell: CollectionCell, indexPath: IndexPath) {
-
+        
         let meal = controller.object(at: indexPath)
         cell.configureCell(meal: meal)
-    
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if let sections = controller.sections {
             let sectionInfo = sections[section]
-            return sectionInfo.numberOfObjects + 1
-     //     return sectionInfo.numberOfObjects
+          return sectionInfo.numberOfObjects
         }
         return 0
     }
@@ -118,13 +76,10 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        var numberOfItems = self.collectionView(self.collectionView, numberOfItemsInSection: 0)
+        let numberOfItems = self.collectionView(self.collectionView, numberOfItemsInSection: 0)
         
         if (indexPath.row == numberOfItems - 1) {
-            
             UIAlertView(title: "you did it!", message: "Add button was pressed :)", delegate: nil, cancelButtonTitle: "Great!").show()
-            
-        
         }
     }
     
@@ -140,12 +95,12 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     @IBAction func snackBtn(_ sender: Any) {
+        
     }
     
     @IBAction func addMealBtn(_ sender: Any) {
         
     }
-    
     
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Meal> = Meal.fetchRequest()
@@ -161,8 +116,6 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
          */
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
-     
         
         self.controller = controller
         
