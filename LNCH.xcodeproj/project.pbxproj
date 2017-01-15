@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8737948E1E2A09A900A5EE9D /* ChooseCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8737948D1E2A09A900A5EE9D /* ChooseCategoryVC.swift */; };
 		87B5B6E61E2637DD00A8F1C7 /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5B6E41E2637DD00A8F1C7 /* Meal+CoreDataClass.swift */; };
 		87B5B6E71E2637DD00A8F1C7 /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5B6E51E2637DD00A8F1C7 /* Meal+CoreDataProperties.swift */; };
 		87B5B6EA1E26385E00A8F1C7 /* Logic.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87B5B6E91E26385E00A8F1C7 /* Logic.rtf */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8737948D1E2A09A900A5EE9D /* ChooseCategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseCategoryVC.swift; path = ../ChooseCategoryVC.swift; sourceTree = "<group>"; };
 		87B5B6E41E2637DD00A8F1C7 /* Meal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		87B5B6E51E2637DD00A8F1C7 /* Meal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		87B5B6E91E26385E00A8F1C7 /* Logic.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Logic.rtf; path = ../Logic.rtf; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				87BB0EE91E23401000107F5C /* MealsVC.swift */,
+				8737948D1E2A09A900A5EE9D /* ChooseCategoryVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				87F3936F1E23259F008BD69A /* LNCH.xcdatamodeld in Sources */,
 				87B5B6E61E2637DD00A8F1C7 /* Meal+CoreDataClass.swift in Sources */,
 				87B5B6E71E2637DD00A8F1C7 /* Meal+CoreDataProperties.swift in Sources */,
+				8737948E1E2A09A900A5EE9D /* ChooseCategoryVC.swift in Sources */,
 				87BB0EEA1E23401000107F5C /* MealsVC.swift in Sources */,
 				87F029001E27524D00609165 /* CollectionCell.swift in Sources */,
 			);

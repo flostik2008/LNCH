@@ -100,7 +100,9 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
     @IBAction func addMealBtn(_ sender: Any) {
         
+        performSegue(withIdentifier: "showChooseCategory", sender: nil)
     }
+    
     
     func attemptFetch() {
         let fetchRequest: NSFetchRequest<Meal> = Meal.fetchRequest()
@@ -109,6 +111,8 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         
         /*
+         https://code.tutsplus.com/tutorials/core-data-and-swift-relationships-and-more-fetching--cms-25070
+         
          let predicate = NSPredicate(format: "%K == %@", "last", "Doe")
          fetchRequest.predicate = predicate
          

@@ -41,11 +41,8 @@
                                             <constraint firstAttribute="width" constant="36" id="7RY-sb-saX"/>
                                             <constraint firstAttribute="height" constant="36" id="w8r-w3-yJJ"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="egJ-1T-gSo" appends="YES" id="8aC-yU-cL8"/>
-                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="add meal btn" translatesAutoresizingMaskIntoConstraints="NO" id="oAw-9D-KM7">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="add meal btn" translatesAutoresizingMaskIntoConstraints="NO" id="oAw-9D-KM7">
                                         <rect key="frame" x="8" y="31" width="30" height="30"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -53,7 +50,7 @@
                                             <constraint firstAttribute="height" constant="25" id="t8T-HF-WhO"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="0mb-Av-PYO" appends="YES" id="2YW-RA-FDr"/>
+                                            <outletCollection property="gestureRecognizers" destination="Vkk-aA-bEc" appends="YES" id="Fdf-h6-9bJ"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -241,28 +238,22 @@
                     <connections>
                         <outlet property="collectionView" destination="A22-5J-WJx" id="Sjs-2J-gme"/>
                         <outlet property="scrollView" destination="SRh-1l-8Id" id="Fud-CQ-iLH"/>
+                        <segue destination="W19-Hi-yVS" kind="presentation" identifier="showChooseCategory" id="tr7-zj-8Di"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="0mb-Av-PYO" userLabel="Show List Tap Gesture">
+                <tapGestureRecognizer id="Vkk-aA-bEc">
                     <connections>
-                        <action selector="addMealBtn:" destination="BYZ-38-t0r" id="p9o-Y9-tGJ"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="egJ-1T-gSo" userLabel="Add Meal Tap Gesture">
-                    <connections>
-                        <segue destination="W19-Hi-yVS" kind="popoverPresentation" id="z9j-0D-Rnr">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <action selector="addMealBtn:" destination="BYZ-38-t0r" id="iCw-kH-vdN"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="48.799999999999997" y="41.829085457271368"/>
+            <point key="canvasLocation" x="48.75" y="41.197183098591552"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose CategoryVC-->
         <scene sceneID="rIT-Ui-d9x">
             <objects>
-                <viewController id="W19-Hi-yVS" sceneMemberID="viewController">
+                <viewController id="W19-Hi-yVS" customClass="ChooseCategoryVC" customModule="LNCH" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LlA-Xm-okb"/>
                         <viewControllerLayoutGuide type="bottom" id="OFu-Qd-T42"/>
