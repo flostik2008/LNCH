@@ -534,7 +534,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7w-Fm-2XE">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7w-Fm-2XE" customClass="ingrTextView" customModule="LNCH" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="212" width="288" height="93"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="93" id="5vM-PU-ecT"/>
@@ -544,18 +544,40 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aD-mm-4Y9" customClass="ingrTextView" customModule="LNCH" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="313" width="288" height="93"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="93" id="tRA-fd-zML"/>
+                                                </constraints>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnZ-qa-O3k" customClass="AddImageBtn" customModule="LNCH" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="438" width="288" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="SAVE">
+                                                    <color key="titleColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="h7w-Fm-2XE" secondAttribute="trailing" constant="16" id="0Vn-PT-Pke"/>
+                                            <constraint firstAttribute="trailing" secondItem="1aD-mm-4Y9" secondAttribute="trailing" constant="16" id="3qq-f1-9RE"/>
                                             <constraint firstItem="n9e-LZ-aM7" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" id="5l6-Bu-QUR"/>
                                             <constraint firstItem="h7w-Fm-2XE" firstAttribute="top" secondItem="rZU-vf-CiI" secondAttribute="bottom" constant="8" id="8zf-7h-ssX"/>
+                                            <constraint firstItem="1aD-mm-4Y9" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" constant="16" id="EiE-G5-dFD"/>
+                                            <constraint firstItem="1aD-mm-4Y9" firstAttribute="top" secondItem="h7w-Fm-2XE" secondAttribute="bottom" constant="8" id="PRv-ak-3nU"/>
                                             <constraint firstAttribute="trailing" secondItem="rZU-vf-CiI" secondAttribute="trailing" constant="16" id="Pim-RC-tvv"/>
                                             <constraint firstItem="rZU-vf-CiI" firstAttribute="top" secondItem="n9e-LZ-aM7" secondAttribute="bottom" constant="18" id="Tgk-aX-1K5"/>
                                             <constraint firstItem="n9e-LZ-aM7" firstAttribute="top" secondItem="ye2-cC-Idr" secondAttribute="top" id="VjK-sM-08A"/>
+                                            <constraint firstAttribute="trailing" secondItem="wnZ-qa-O3k" secondAttribute="trailing" constant="16" id="fOs-0c-mHf"/>
                                             <constraint firstItem="h7w-Fm-2XE" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" constant="16" id="hCJ-nK-VCg"/>
                                             <constraint firstItem="rZU-vf-CiI" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" constant="16" id="joe-x9-ZuQ"/>
                                             <constraint firstAttribute="trailing" secondItem="n9e-LZ-aM7" secondAttribute="trailing" id="kuc-8i-HAc"/>
+                                            <constraint firstItem="wnZ-qa-O3k" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" constant="16" id="riE-25-L7D"/>
+                                            <constraint firstAttribute="bottom" secondItem="wnZ-qa-O3k" secondAttribute="bottom" constant="30" id="zIn-G7-IWa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -582,6 +604,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="directionsTextView" destination="1aD-mm-4Y9" id="oIL-6B-Ufq"/>
                         <outlet property="ingridientsTextView" destination="h7w-Fm-2XE" id="c4x-CN-uhf"/>
                         <outlet property="scrollView" destination="1T7-BR-Aty" id="pc3-RB-T0r"/>
                         <outlet property="titleTextField" destination="rZU-vf-CiI" id="b2S-Bt-Vl0"/>

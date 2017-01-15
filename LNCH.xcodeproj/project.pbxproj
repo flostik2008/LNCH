@@ -16,6 +16,7 @@
 		87B5B6EA1E26385E00A8F1C7 /* Logic.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87B5B6E91E26385E00A8F1C7 /* Logic.rtf */; };
 		87BB0EEA1E23401000107F5C /* MealsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BB0EE91E23401000107F5C /* MealsVC.swift */; };
 		87F029001E27524D00609165 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F028FF1E27524D00609165 /* CollectionCell.swift */; };
+		87F0DAF11E2B70B200EEAE66 /* ingrTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F0DAF01E2B70B200EEAE66 /* ingrTextView.swift */; };
 		87F393671E23259F008BD69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F393661E23259F008BD69A /* AppDelegate.swift */; };
 		87F3936C1E23259F008BD69A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F3936A1E23259F008BD69A /* Main.storyboard */; };
 		87F3936F1E23259F008BD69A /* LNCH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87F3936D1E23259F008BD69A /* LNCH.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		87B5B6E91E26385E00A8F1C7 /* Logic.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Logic.rtf; path = ../Logic.rtf; sourceTree = "<group>"; };
 		87BB0EE91E23401000107F5C /* MealsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsVC.swift; sourceTree = "<group>"; };
 		87F028FF1E27524D00609165 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		87F0DAF01E2B70B200EEAE66 /* ingrTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ingrTextView.swift; sourceTree = "<group>"; };
 		87F393631E23259F008BD69A /* LNCH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LNCH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F393661E23259F008BD69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87F3936B1E23259F008BD69A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				87F028FF1E27524D00609165 /* CollectionCell.swift */,
 				8738E5E41E2B46CA00D3C771 /* AddImageBtn.swift */,
+				87F0DAF01E2B70B200EEAE66 /* ingrTextView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87F393671E23259F008BD69A /* AppDelegate.swift in Sources */,
+				87F0DAF11E2B70B200EEAE66 /* ingrTextView.swift in Sources */,
 				8738E5E31E2B3C2A00D3C771 /* CreateMealVC.swift in Sources */,
 				87F3936F1E23259F008BD69A /* LNCH.xcdatamodeld in Sources */,
 				87B5B6E61E2637DD00A8F1C7 /* Meal+CoreDataClass.swift in Sources */,

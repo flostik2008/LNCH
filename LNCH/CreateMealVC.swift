@@ -12,8 +12,8 @@ import IQKeyboardManagerSwift
 class CreateMealVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var titleTextField: UITextField!
-        
     @IBOutlet weak var ingridientsTextView: UITextView!
+    @IBOutlet weak var directionsTextView: UITextView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -26,11 +26,13 @@ class CreateMealVC: UIViewController, UITextViewDelegate {
         
         ingridientsTextView.text = "ingridients"
         ingridientsTextView.textColor = lightGreyColor
-        
         ingridientsTextView.delegate = self
         
-        scrollView.keyboardDismissMode = .interactive
+        directionsTextView.text = "directions"
+        directionsTextView.textColor = lightGreyColor
+        directionsTextView.delegate = self
         
+        scrollView.keyboardDismissMode = .interactive
         IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 55
     }
 
@@ -51,9 +53,13 @@ class CreateMealVC: UIViewController, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if ingridientsTextView.textColor == lightGreyColor {
-            print("Hello there")
             ingridientsTextView.text = nil
             ingridientsTextView.textColor = UIColor.white
+        }
+        
+        if directionsTextView.textColor == lightGreyColor {
+            directionsTextView.text = nil
+            directionsTextView.textColor = UIColor.white
         }
     }
     
@@ -62,6 +68,11 @@ class CreateMealVC: UIViewController, UITextViewDelegate {
         if ingridientsTextView.text.isEmpty {
             ingridientsTextView.text = "ingridients"
             ingridientsTextView.textColor = lightGreyColor
+        }
+        
+        if directionsTextView.text.isEmpty {
+            directionsTextView.text = "directions"
+            directionsTextView.textColor = lightGreyColor
         }
     }
 }
