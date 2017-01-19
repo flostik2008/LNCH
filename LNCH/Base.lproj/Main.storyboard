@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ko8-zZ-4vm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -360,30 +360,35 @@
                                 <rect key="frame" x="0.0" y="75" width="320" height="98"/>
                                 <connections>
                                     <action selector="breakfastChosen:" destination="W19-Hi-yVS" eventType="touchUpInside" id="Mkg-Oh-JV4"/>
+                                    <segue destination="ko8-zZ-4vm" kind="show" identifier="CreateMealVC" id="kKC-Mq-1hZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwz-GP-VwH" userLabel="LunchBtn">
                                 <rect key="frame" x="0.0" y="182" width="320" height="99"/>
                                 <connections>
                                     <action selector="lunchChosen:" destination="W19-Hi-yVS" eventType="touchUpInside" id="InS-9j-Q7y"/>
+                                    <segue destination="ko8-zZ-4vm" kind="show" identifier="CreateMealVC" id="hiL-YT-yRf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuQ-0O-p9o" userLabel="DinnerBtn">
                                 <rect key="frame" x="0.0" y="289" width="320" height="99"/>
                                 <connections>
                                     <action selector="dinnerChosen:" destination="W19-Hi-yVS" eventType="touchUpInside" id="4Lx-Ii-Elv"/>
+                                    <segue destination="ko8-zZ-4vm" kind="show" identifier="CreateMealVC" id="RnH-pI-pwm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsQ-A9-tbR" userLabel="DessertBtn">
                                 <rect key="frame" x="0.0" y="396" width="315" height="101"/>
                                 <connections>
                                     <action selector="dessertChosen:" destination="W19-Hi-yVS" eventType="touchUpInside" id="z5o-9A-icr"/>
+                                    <segue destination="ko8-zZ-4vm" kind="show" identifier="CreateMealVC" id="u3P-9X-Bsv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0E-W0-ABt" userLabel="SnackBtn">
                                 <rect key="frame" x="0.0" y="468" width="320" height="100"/>
                                 <connections>
                                     <action selector="snackChosen:" destination="W19-Hi-yVS" eventType="touchUpInside" id="q1z-7c-rQK"/>
+                                    <segue destination="ko8-zZ-4vm" kind="show" identifier="CreateMealVC" id="aO7-10-UGa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -517,6 +522,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ye2-cC-Idr" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="496"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZkU-PW-lH1" userLabel="add Image">
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="155"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9e-LZ-aM7" customClass="AddImageBtn" customModule="LNCH" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
                                                 <constraints>
@@ -527,6 +535,9 @@
                                                 <state key="normal" title="add image">
                                                     <color key="titleColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addImageBtn:" destination="ko8-zZ-4vm" eventType="touchUpInside" id="5DU-B3-eGb"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rZU-vf-CiI">
                                                 <rect key="frame" x="16" y="173" width="288" height="31"/>
@@ -559,23 +570,32 @@
                                                 <state key="normal" title="SAVE">
                                                     <color key="titleColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="saveBtn:" destination="ko8-zZ-4vm" eventType="touchUpInside" id="O2R-au-xDa"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="h7w-Fm-2XE" secondAttribute="trailing" constant="16" id="0Vn-PT-Pke"/>
+                                            <constraint firstItem="rZU-vf-CiI" firstAttribute="top" secondItem="ZkU-PW-lH1" secondAttribute="bottom" id="34c-Mr-M9T"/>
                                             <constraint firstAttribute="trailing" secondItem="1aD-mm-4Y9" secondAttribute="trailing" constant="16" id="3qq-f1-9RE"/>
                                             <constraint firstItem="n9e-LZ-aM7" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" id="5l6-Bu-QUR"/>
                                             <constraint firstItem="h7w-Fm-2XE" firstAttribute="top" secondItem="rZU-vf-CiI" secondAttribute="bottom" constant="8" id="8zf-7h-ssX"/>
                                             <constraint firstItem="1aD-mm-4Y9" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" constant="16" id="EiE-G5-dFD"/>
+                                            <constraint firstItem="ZkU-PW-lH1" firstAttribute="width" secondItem="n9e-LZ-aM7" secondAttribute="width" id="I5s-14-HnI"/>
                                             <constraint firstItem="1aD-mm-4Y9" firstAttribute="top" secondItem="h7w-Fm-2XE" secondAttribute="bottom" constant="8" id="PRv-ak-3nU"/>
+                                            <constraint firstItem="ZkU-PW-lH1" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" id="PVg-V9-IGJ"/>
                                             <constraint firstAttribute="trailing" secondItem="rZU-vf-CiI" secondAttribute="trailing" constant="16" id="Pim-RC-tvv"/>
                                             <constraint firstItem="rZU-vf-CiI" firstAttribute="top" secondItem="n9e-LZ-aM7" secondAttribute="bottom" constant="18" id="Tgk-aX-1K5"/>
                                             <constraint firstItem="n9e-LZ-aM7" firstAttribute="top" secondItem="ye2-cC-Idr" secondAttribute="top" id="VjK-sM-08A"/>
                                             <constraint firstAttribute="trailing" secondItem="wnZ-qa-O3k" secondAttribute="trailing" constant="16" id="fOs-0c-mHf"/>
+                                            <constraint firstItem="ZkU-PW-lH1" firstAttribute="height" secondItem="n9e-LZ-aM7" secondAttribute="height" id="fP4-l4-eVl"/>
                                             <constraint firstItem="h7w-Fm-2XE" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" constant="16" id="hCJ-nK-VCg"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZkU-PW-lH1" secondAttribute="trailing" id="hbv-y6-DnS"/>
                                             <constraint firstItem="rZU-vf-CiI" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" constant="16" id="joe-x9-ZuQ"/>
                                             <constraint firstAttribute="trailing" secondItem="n9e-LZ-aM7" secondAttribute="trailing" id="kuc-8i-HAc"/>
+                                            <constraint firstItem="ZkU-PW-lH1" firstAttribute="top" secondItem="ye2-cC-Idr" secondAttribute="top" id="raY-pZ-kz8"/>
                                             <constraint firstItem="wnZ-qa-O3k" firstAttribute="leading" secondItem="ye2-cC-Idr" secondAttribute="leading" constant="16" id="riE-25-L7D"/>
                                             <constraint firstAttribute="bottom" secondItem="wnZ-qa-O3k" secondAttribute="bottom" constant="30" id="zIn-G7-IWa"/>
                                         </constraints>
@@ -604,10 +624,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addImage" destination="ZkU-PW-lH1" id="gbe-kU-jzn"/>
                         <outlet property="directionsTextView" destination="1aD-mm-4Y9" id="oIL-6B-Ufq"/>
                         <outlet property="ingridientsTextView" destination="h7w-Fm-2XE" id="c4x-CN-uhf"/>
                         <outlet property="scrollView" destination="1T7-BR-Aty" id="pc3-RB-T0r"/>
                         <outlet property="titleTextField" destination="rZU-vf-CiI" id="b2S-Bt-Vl0"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToMainVC" id="OwE-c9-gxH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSK-wM-Itj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -626,4 +648,7 @@
         <image name="lunch" width="750" height="238"/>
         <image name="snack" width="750" height="238"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="u3P-9X-Bsv"/>
+    </inferredMetricsTieBreakers>
 </document>

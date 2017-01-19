@@ -63,9 +63,12 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         if let sections = controller.sections {
             let sectionInfo = sections[section]
+            
+            print("Zhenya: '...numverOfItemsInSection' is called with number of obj: \(sectionInfo.numberOfObjects)")
           return sectionInfo.numberOfObjects
-        }
-        return 0
+        } else {
+            print("Zhenya: No, im there with 0 objects")
+            return 0 } 
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -75,13 +78,6 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let numberOfItems = self.collectionView(self.collectionView, numberOfItemsInSection: 0)
-        
-        if (indexPath.row == numberOfItems - 1) {
-            UIAlertView(title: "you did it!", message: "Add button was pressed :)", delegate: nil, cancelButtonTitle: "Great!").show()
-        }
-    }
     
     @IBAction func allMealsBtn(_ sender: Any) {
     }
@@ -121,6 +117,7 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
+        controller.delegate = self  
         self.controller = controller
         
         do {
@@ -133,11 +130,14 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func  controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        print("Zhenya: 'controllerWillChangeContent' is called")
         blockOperations.removeAll(keepingCapacity: false)
         
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+        print("Zhenya: 'controllerDidChangeContent' is called")
         collectionView!.performBatchUpdates({ () -> Void in
             
             for operation: BlockOperation in self.blockOperations {
@@ -152,6 +152,7 @@ class MealsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch (type) {
         case .insert:
+            print("Zhenya: 'controller: didChange anObject: ...' is called, new Meal obj is inserted at newIndexPath: \(newIndexPath) , \(anObject), \(indexPath)")
             if let indexPath = newIndexPath {
                 collectionView.insertItems(at: [indexPath])
             }
